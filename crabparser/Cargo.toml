@@ -1,0 +1,31 @@
+[package]
+name = "crabparser"
+version = "0.1.0"
+edition = "2021"
+authors = ["Loldinis <loldinis@gmail.com>"]
+license = "MIT"
+description = "A fast text parser library with Python bindings"
+
+[lib]
+name = "crabparser_rust"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.22", features = ["extension-module", "abi3-py39"] }
+regex = "1.10"
+rayon = "1.10"
+# For encoding detection and handling
+encoding_rs = "0.8"
+# For DOCX parsing
+zip = "0.6"
+quick-xml = "0.36"
+# For CSV parsing
+csv = "1.3"
+# For PDF parsing
+pdf-extract = "0.7"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

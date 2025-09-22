@@ -1,0 +1,10 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+maturin>=1.7,<2.0
+# For Python fallback file parsing
+python-docx==1.1.0
+pypdf==3.17.4
+pandas==2.1.4
+# For encoding detection
+chardet==5.2.0
